@@ -93,7 +93,7 @@ namespace Exemple.Domain.Operations
                 decimal totalPrice = 0;
 
                 foreach (var validatedProduct in validStock.ValidatedOrder.Products)
-                {
+    {
                     var productPrice = await productsRepository.TryGetPrice(validatedProduct.productCode);
                     totalPrice += productPrice.Value * validatedProduct.Quantity.Value;
                 }
