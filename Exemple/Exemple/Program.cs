@@ -1,7 +1,7 @@
 ﻿using Exemple.Domain.Models;
 using System;
 using System.Collections.Generic;
-using static Exemple.Domain.Models.ExamGrades;
+using static Exemple.Domain.Models.ProductOrder;
 using Exemple.Domain;
 using System.Threading.Tasks;
 using LanguageExt;
@@ -10,6 +10,9 @@ using Example.Data.Repositories;
 using Example.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Exemple.Domain.Commands;
+using Exemple.Domain.Repositories;
+using Exemple.Domain.WorkFlow;
 
 namespace Exemple
 {
@@ -19,76 +22,61 @@ namespace Exemple
 
         static async Task Main(string[] args)
         {
-            using ILoggerFactory loggerFactory = ConfigureLoggerFactory();
-            ILogger<PublishGradeWorkflow> logger = loggerFactory.CreateLogger<PublishGradeWorkflow>();
+            var dbContextBuilder = new DbContextOptionsBuilder<ProductsContext>()
+                                                .UseSqlServer(connectionString);
 
-            var listOfGrades = ReadListOfGrades().ToArray();
-            PublishGradesCommand command = new PublishGradesCommand(listOfGrades);
-            var dbContextBuilder = new DbContextOptionsBuilder<GradesContext>()
-                                                .UseSqlServer(ConnectionString)
-                                                .UseLoggerFactory(loggerFactory);
-
-            GradesContext gradesContext = new GradesContext(dbContextBuilder.Options);
-            StudentsRepository studentsRepository = new StudentsRepository(gradesContext);
-            GradesRepository gradesRepository = new GradesRepository(gradesContext);
-
-            PublishGradeWorkflow workflow = new PublishGradeWorkflow(studentsRepository, gradesRepository, logger);
-            var result = await workflow.ExecuteAsync(command);
+            ProductsContext productsContext = new(dbContextBuilder.Options);
+            OrdersRepository ordersRepository = new(productsContext);
+            ProductsRepository productsRepository = new(productsContext);
+            var order = ReadOrder();
+            PlaceOrderCommand command = new(order);
+            PlaceOrderWorkflow workflow = new(ordersRepository, productsRepository);
+            var result = await workflow.Execute(command);
 
             result.Match(
-                    whenExamGradesPublishFaildEvent: @event =>
+                    whenPlacedOrderSucceededEvent: @event =>
                     {
-                        Console.WriteLine($"Publish failed: {@event.Reason}");
+                        Console.WriteLine($"Order succeeded. {@event.TotalPrice}");
                         return @event;
                     },
-                    whenExamGradesPublishScucceededEvent: @event =>
+                    whenPlacedOrderFailedEvent: @event =>
                     {
-                        Console.WriteLine($"Publish succeeded.");
-                        Console.WriteLine(@event.Csv);
+                        Console.WriteLine($"Order Failed failed: {@event.Reason}");
                         return @event;
                     }
                 );
         }
 
-        private static ILoggerFactory ConfigureLoggerFactory()
-        {
-            return LoggerFactory.Create(builder =>
-                                builder.AddSimpleConsole(options =>
-                                {
-                                    options.IncludeScopes = true;
-                                    options.SingleLine = true;
-                                    options.TimestampFormat = "hh:mm:ss ";
-                                })
-                                .AddProvider(new Microsoft.Extensions.Logging.Debug.DebugLoggerProvider()));
-        }
 
-        private static List<UnvalidatedStudentGrade> ReadListOfGrades()
+        private static UnvalidatedOrder ReadOrder()
         {
-            List<UnvalidatedStudentGrade> listOfGrades = new();
+
+            var adress = ReadValue("Adress: ");
+
+            List<UnvalidatedProduct> listOfProducts = new();
             do
             {
-                //read registration number and grade and create a list of greads
-                var registrationNumber = ReadValue("Registration Number: ");
-                if (string.IsNullOrEmpty(registrationNumber))
+                var productCode = ReadValue("Product name: ");
+                if (string.IsNullOrEmpty(productCode))
                 {
                     break;
                 }
 
-                var examGrade = ReadValue("Exam Grade: ");
-                if (string.IsNullOrEmpty(examGrade))
+                var quantity = ReadValue("Quantity: ");
+                if (string.IsNullOrEmpty(quantity))
                 {
                     break;
                 }
 
-                var activityGrade = ReadValue("Activity Grade: ");
-                if (string.IsNullOrEmpty(activityGrade))
+                var price = ReadValue("Price: ");
+                if (string.IsNullOrEmpty(price))
                 {
                     break;
                 }
 
-                listOfGrades.Add(new(registrationNumber, examGrade, activityGrade));
+                listOfProducts.Add(new(productCode, quantity, price));
             } while (true);
-            return listOfGrades;
+            return new UnvalidatedOrder(adress, listOfProducts);
         }
 
         private static string? ReadValue(string prompt)
@@ -96,6 +84,5 @@ namespace Exemple
             Console.Write(prompt);
             return Console.ReadLine();
         }
-
     }
 }

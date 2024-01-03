@@ -1,0 +1,5 @@
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Debug\net6.0\Exemple.Domain.csproj.AssemblyReference.cache
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Debug\net6.0\Exemple.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Debug\net6.0\Exemple.Domain.AssemblyInfoInputs.cache
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Debug\net6.0\Exemple.Domain.AssemblyInfo.cs
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Debug\net6.0\Exemple.Domain.csproj.CoreCompileInputs.cache
