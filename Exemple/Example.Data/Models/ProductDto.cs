@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Example.Data.Models
 {
-    internal class ProductDto
+    public class ProductDto
     {
+        public int ProductId { get; set; }
+        public string Code { get; set; }
+
+        public int? Stoc { get; set; }
     }
 }

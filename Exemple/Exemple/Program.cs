@@ -18,11 +18,15 @@ namespace Exemple
 {
     class Program
     {
-        private static string ConnectionString = "Server=LAPTOP-5O6G7HEC\\DEVELOPER;Database=PSSC-sample;Trusted_Connection=True;MultipleActiveResultSets=true";
+
 
         static async Task Main(string[] args)
         {
-            var dbContextBuilder = new DbContextOptionsBuilder<ProductsContext>()
+        const string connectionString = "Server=LAPTOP-5O6G7HEC\\DEVELOPER;Database=PSSC-sample;Trusted_Connection=True;MultipleActiveResultSets=true";
+
+
+
+        var dbContextBuilder = new DbContextOptionsBuilder<ProductsContext>()
                                                 .UseSqlServer(connectionString);
 
             ProductsContext productsContext = new(dbContextBuilder.Options);
