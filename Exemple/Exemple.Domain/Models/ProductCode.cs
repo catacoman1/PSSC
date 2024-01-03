@@ -27,7 +27,7 @@ namespace Exemple.Domain.Models
             this.Value = code;
         }
 
-        private static bool IsValid(string stringValue, List<string> availableProductsList) => availableProductsList.Contains(stringValue.ToLower());
+        private static bool IsValid(string stringValue, List<string> availableProductsList) => availableProductsList.Contains(stringValue);
 
         public override string ToString()
         {

@@ -22,7 +22,7 @@ namespace Exemple
 
         static async Task Main(string[] args)
         {
-        const string connectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;";
+        const string connectionString = "Server=localhost\\SQLEXPRESS;Database=Magazin;Trusted_Connection=True;";
 
 
 
@@ -39,6 +39,7 @@ namespace Exemple
             PlaceOrderCommand command = new(order);
             PlaceOrderWorkflow workflow = new(ordersRepository, productsRepository);
             var result = await workflow.Execute(command);
+            //Console.WriteLine(result);
 
             result.Match(
                     whenPlacedOrderSucceededEvent: @event =>
@@ -63,8 +64,8 @@ namespace Exemple
             List<UnvalidatedProduct> listOfProducts = new();
             do
             {
-                var productCode = ReadValue("Product name: ");
-                if (string.IsNullOrEmpty(productCode))
+                var productCode = ReadValue("Product name (or enter 'done' to finish): ");
+                if (string.IsNullOrEmpty(productCode) || productCode.ToLower() == "done")
                 {
                     break;
                 }
@@ -82,8 +83,10 @@ namespace Exemple
                 }
 
                 listOfProducts.Add(new(productCode, quantity, price));
+                //Console.WriteLine(listOfProducts.Count);
             } while (true);
             return new UnvalidatedOrder(adress, listOfProducts);
+            
         }
 
         private static string? ReadValue(string prompt)

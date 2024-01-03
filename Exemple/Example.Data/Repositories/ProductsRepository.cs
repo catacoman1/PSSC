@@ -42,12 +42,12 @@ namespace Example.Data.Repositories
             var price = from p in productsContext.Products
                         join o in productsContext.Orders on p.ProductId equals o.ProductId
                         where p.Code == code.Value
-                        select o.Price;
+                        select o.Price; 
             var priceValue = await price.FirstOrDefaultAsync();
 
             if (priceValue == null)
             {
-                throw new Exception("Product not found!");
+                throw new Exception("Product not found in order header!");
             }
             else
             {

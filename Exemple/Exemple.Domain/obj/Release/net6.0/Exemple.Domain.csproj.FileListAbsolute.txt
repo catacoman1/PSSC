@@ -1,0 +1,12 @@
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\bin\Release\net6.0\Exemple.Domain.deps.json
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\bin\Release\net6.0\Exemple.Domain.dll
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\bin\Release\net6.0\Exemple.Domain.pdb
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Release\net6.0\Exemple.Domain.csproj.AssemblyReference.cache
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Release\net6.0\Exemple.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Release\net6.0\Exemple.Domain.AssemblyInfoInputs.cache
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Release\net6.0\Exemple.Domain.AssemblyInfo.cs
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Release\net6.0\Exemple.Domain.csproj.CoreCompileInputs.cache
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Release\net6.0\Exemple.Domain.dll
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Release\net6.0\refint\Exemple.Domain.dll
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Release\net6.0\Exemple.Domain.pdb
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Release\net6.0\ref\Exemple.Domain.dll

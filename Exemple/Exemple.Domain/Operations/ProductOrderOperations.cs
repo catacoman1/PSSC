@@ -31,6 +31,10 @@ namespace Exemple.Domain.Operations
                     isValidList = false;
                     break;
                 }
+                foreach (var code in productCodes)
+                {
+                    Console.WriteLine($"Available product code: {code.Value}");
+                }
                 if (!ProductCode.TryParse(unvalidatedProduct.ProductCode, productCodes.Select(p => p.Value).ToList(), out ProductCode productCode))
                 {
                     invalidReson = $"Invalid product code ({unvalidatedProduct.ProductCode})";
