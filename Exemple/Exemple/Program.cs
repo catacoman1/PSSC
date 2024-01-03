@@ -22,7 +22,7 @@ namespace Exemple
 
         static async Task Main(string[] args)
         {
-        const string connectionString = "Server=LAPTOP-5O6G7HEC\\DEVELOPER;Database=PSSC-sample;Trusted_Connection=True;MultipleActiveResultSets=true";
+        const string connectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;";
 
 
 
@@ -30,6 +30,9 @@ namespace Exemple
                                                 .UseSqlServer(connectionString);
 
             ProductsContext productsContext = new(dbContextBuilder.Options);
+
+            //Console.WriteLine("Debug: Successfully connected to the database.");
+
             OrdersRepository ordersRepository = new(productsContext);
             ProductsRepository productsRepository = new(productsContext);
             var order = ReadOrder();
