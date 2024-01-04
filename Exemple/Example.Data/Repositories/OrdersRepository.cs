@@ -1,6 +1,8 @@
-﻿using Exemple.Domain.Models;
+﻿using Example.Data.Models;
+using Exemple.Domain.Models;
 using Exemple.Domain.Repositories;
 using LanguageExt;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +25,40 @@ namespace Example.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public TryAsync<Unit> TrySaveOrders(ProductOrder.ValidatedProductOrder order)
+
+
+        public TryAsync<Unit> TrySaveOrders(ProductOrder.ValidatedProductOrder validatedOrder)
         {
-            throw new NotImplementedException();
+            return async () =>
+            {
+                foreach (var validatedProduct in validatedOrder.ValidatedOrder.Products)
+                {
+                    var productCode = validatedProduct.productCode.Value;
+                    var quantity = validatedProduct.Quantity.Value;
+                    var price = validatedProduct.price.Value;
+
+                    var product = await productsContext.Products
+                        .FirstOrDefaultAsync(p => p.Code == productCode);
+
+                    if (product == null)
+                    {
+                        throw new ArgumentException("Product not found!");
+                    }
+
+                    var orderLineDto = new OrderLineDto
+                    {
+                        ProductId = product.ProductId,
+                        Quantity = quantity,
+                        Price = price
+                    };
+
+                    productsContext.Orders.Add(orderLineDto);
+                }
+
+                await productsContext.SaveChangesAsync();
+                return Unit.Default;
+            };
         }
     }
-}
+    }
+
