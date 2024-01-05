@@ -32,7 +32,7 @@ namespace Exemple
 
             //Console.WriteLine("Debug: Successfully connected to the database.");
 
-            OrdersRepository ordersRepository = new(productsContext);
+            OrderHeadersRepository ordersRepository = new(productsContext);
             ProductsRepository productsRepository = new(productsContext);
             var order = ReadOrder();
             PlaceOrderCommand command = new(order);

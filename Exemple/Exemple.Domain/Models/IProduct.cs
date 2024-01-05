@@ -6,5 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exemple.Domain.Models
 {
-	public record ValidatedProduct(ProductID productID, string code, int quantity, double price) : IProduct;
+    internal interface IProduct
+    {
+    }
 }

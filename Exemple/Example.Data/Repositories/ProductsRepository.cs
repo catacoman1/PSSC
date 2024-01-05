@@ -9,49 +9,41 @@ using System.Threading.Tasks;
 
 namespace Example.Data.Repositories
 {
-    public class ProductsRepository : IProductsRepository
+    public class ProductsRepository
     {
-        private readonly ProductsContext productsContext;
+        private readonly CartAppDbContext dbContext;
 
-        public ProductsRepository(ProductsContext dBContext)
+        public ProductsRepository(CartAppDbContext dbContext)
         {
-            this.productsContext = dBContext;
+            this.dbContext = dbContext;
         }
 
-        public async Task<List<ProductCode>> TryGetExistingProductCodes()
+        public async Task<ValidatedProduct> TryGetProduct(string searchedProduct, int quantity)
         {
-            var products = await productsContext.Products.AsNoTracking().ToListAsync();
-            return products.Select(product => new ProductCode(product.Code))
-                           .ToList();
-        }
-        public async Task<Quantity> TryGetQuantityForProduct(ProductCode code)
-        {
-            var product = await productsContext.Products.FirstAsync(product => product.Code.Equals(code.Value));
+            var product = await dbContext.Products
+                                         .Where(p => p.ProductId == searchedProduct && p.Stoc >= quantity)
+                                         .FirstOrDefaultAsync();
 
-            if (product == null)
+            ValidatedProduct validatedProduct = null;
+            if (product != null)
             {
-                throw new Exception("Product not found!");
+                ProductID productID = new ProductID(searchedProduct);
+                validatedProduct = new ValidatedProduct(productID, product.Code, quantity, product.PricePerPiece * quantity);
             }
-            else
-            {
-                return new Quantity((int)product.Stoc);
-            }
-        }
-        public async Task<Price> TryGetPrice(ProductCode code)
-        {
-            var price = from p in productsContext.Products
-                        join o in productsContext.Orders on p.ProductId equals o.ProductId
-                        where p.Code == code.Value
-                        select o.Price; 
-            var priceValue = await price.FirstOrDefaultAsync();
 
-            if (priceValue == null)
+            return validatedProduct;
+        }
+
+        public async Task TryRemoveStoc(string productId, int quantity)
+        {
+            var product = await dbContext.Products
+                                         .Where(p => p.ProductId == productId)
+                                         .FirstOrDefaultAsync();
+
+            if (product != null)
             {
-                throw new Exception("Product not found in order header!");
-            }
-            else
-            {
-                return new Price((decimal)priceValue);
+                product.Stoc -= quantity;
+                await dbContext.SaveChangesAsync();
             }
         }
     }
