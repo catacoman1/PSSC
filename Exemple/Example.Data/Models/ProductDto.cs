@@ -8,9 +8,11 @@ namespace Example.Data.Models
 {
     public class ProductDto
     {
-        public int ProductId { get; set; }
+        public string ProductId { get; set; }
         public string Code { get; set; }
+        public int Stoc { get; set; }
+        public double PricePerPiece { get; set; }
 
-        public int? Stoc { get; set; }
+        public ICollection<OrderLineDto> OrderLines { get; set; }
     }
 }

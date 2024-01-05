@@ -22,9 +22,8 @@ namespace Exemple
 
         static async Task Main(string[] args)
         {
+
         const string connectionString = "Server=localhost\\SQLEXPRESS;Database=Magazin;Trusted_Connection=True;";
-
-
 
         var dbContextBuilder = new DbContextOptionsBuilder<ProductsContext>()
                                                 .UseSqlServer(connectionString);
@@ -49,7 +48,7 @@ namespace Exemple
                     },
                     whenPlacedOrderFailedEvent: @event =>
                     {
-                        Console.WriteLine($"Order Failed failed: {@event.Reason}");
+                        Console.WriteLine($"Order failed : {@event.Reason}");
                         return @event;
                     }
                 );
