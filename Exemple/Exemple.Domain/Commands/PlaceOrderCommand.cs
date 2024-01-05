@@ -1,4 +1,5 @@
-﻿using Exemple.Domain.Models;
+﻿using Exemple.Domain.Interfaces;
+using Exemple.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,5 @@ using System.Threading.Tasks;
 
 namespace Exemple.Domain.Commands
 {
-    public record PlaceOrderCommand
-    {
-        public PlaceOrderCommand(UnvalidatedOrder inputOrder)
-        {
-            InputOrder = inputOrder;
-        }
-
-        public UnvalidatedOrder InputOrder { get; }
-    }
+    public record UnvalidatedProduct(string productId, int quantity) : IProduct;
 }

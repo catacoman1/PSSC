@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exemple.Domain.Models
+namespace Exemple.Domain.Interfaces
 {
-    internal interface IProduct
+    public interface IPaymentMethod
     {
+        public string name { get; }
     }
 }
