@@ -53,6 +53,22 @@ namespace Example.Data.Repositories
             dbContext.SaveChanges();
             return orderHeader.OrderId;
         }
+        public async Task<OrderHeaderDto> GetOrderHeaderById(string orderId)
+        {
+            return await dbContext.OrderHeaders
+                .AsNoTracking()
+                .FirstOrDefaultAsync(oh => oh.OrderId == orderId);
+        }
+        public async Task DeleteOrderHeader(string orderId)
+        {
+            var orderHeader = await dbContext.OrderHeaders
+                                             .FindAsync(orderId);
+            if (orderHeader != null)
+            {
+                dbContext.OrderHeaders.Remove(orderHeader);
+                await dbContext.SaveChangesAsync();
+            }
+        }
     }
 }
 

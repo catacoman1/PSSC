@@ -6,9 +6,6 @@ C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Ex
 C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.deps.json
 C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.dll
 C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.pdb
-C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Exemple.Domain.dll
-C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Exemple.Domain.pdb
-C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.csproj.CopyComplete
 C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.dll
 C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\refint\Example.Data.dll
 C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.pdb
@@ -27,3 +24,5 @@ C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Example.Data\obj\Debug\net6
 C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\ref\Example.Data.dll
 C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.runtimeconfig.json
 C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.genruntimeconfig.cache
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.runtimeconfig.json
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.genruntimeconfig.cache

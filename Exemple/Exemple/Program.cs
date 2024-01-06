@@ -47,8 +47,34 @@ namespace Exemple
                         Console.WriteLine($"\nShopping succeed:\nDate: {@event.date}\nPrice payed: {@event.totalPrice}");
                         return @event;
                     }
+     
+                    
+                    );
+
+            Console.Write("\nEnter Order ID to cancel or leave empty to skip: ");
+            var orderId = Console.ReadLine();
+            if (!string.IsNullOrEmpty(orderId))
+            {
+                CancelWorkflow cancelWorkflow = new CancelWorkflow(dbContext);
+                var cancellationResult = await cancelWorkflow.Execute(orderId);
+                cancellationResult.Match<Unit>(
+                    whenCancellationSucceedEvent: @event =>
+                    {
+                        Console.WriteLine($"\nOrder cancellation succeeded: Order ID {@event.OrderId} has been cancelled.");
+                        return Unit.Default;
+                    },
+                    whenCancellationFailedEvent: @event =>
+                    {
+                        Console.WriteLine($"\nOrder cancellation failed: {@event.Error}");
+                        return Unit.Default;
+                    }
                 );
+            }
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
+
+           
+
 
         }
         static StartShoppingCommand addShoppingDetails()

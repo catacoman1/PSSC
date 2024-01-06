@@ -45,5 +45,17 @@ namespace Example.Data.Repositories
                 await dbContext.SaveChangesAsync();
             }
         }
+        public async Task RestockProduct(string productId, int quantity)
+        {
+            var product = await dbContext.Products
+                                         .Where(p => p.ProductId == productId)
+                                         .FirstOrDefaultAsync();
+
+            if (product != null)
+            {
+                product.Stoc += quantity; 
+                await dbContext.SaveChangesAsync();
+            }
+        }
     }
 }

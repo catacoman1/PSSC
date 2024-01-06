@@ -2,6 +2,7 @@
 using Exemple.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,15 @@ namespace Example.Data.Repositories
             orderLine.OrderLineId = await GenerateRandomID();
             await dbContext.OrderLines.AddAsync(orderLine);
             dbContext.SaveChanges();
+        }
+        public Task<List<OrderLineDto>> GetOrderLinesByOrderId(string orderId)
+        {
+            // aici e cu probleme putin, acum nu mai e asincrona
+            var result = dbContext.OrderLines
+                                  .Where(ol => ol.OrderId == orderId)
+                                  .ToList(); 
+
+            return Task.FromResult(result);
         }
     }
 }

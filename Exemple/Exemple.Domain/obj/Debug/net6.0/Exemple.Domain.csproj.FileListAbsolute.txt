@@ -27,3 +27,8 @@ C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Exemple.Domain\bin\Debug\ne
 C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Exemple.Domain\bin\Debug\net6.0\Example.Data.pdb
 C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Exemple.Domain\obj\Debug\net6.0\Exemple.Domain.csproj.CopyComplete
 C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Exemple.Domain\obj\Debug\net6.0\Exemple.Domain.genruntimeconfig.cache
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\bin\Debug\net6.0\Exemple.Domain.runtimeconfig.json
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\bin\Debug\net6.0\Example.Data.dll
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\bin\Debug\net6.0\Example.Data.pdb
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Debug\net6.0\Exemple.Domain.csproj.CopyComplete
+C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Exemple.Domain\obj\Debug\net6.0\Exemple.Domain.genruntimeconfig.cache
