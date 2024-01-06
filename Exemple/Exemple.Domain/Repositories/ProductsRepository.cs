@@ -1,5 +1,4 @@
 ﻿using Exemple.Domain.Models;
-using Exemple.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

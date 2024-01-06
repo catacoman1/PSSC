@@ -1,5 +1,5 @@
 ﻿using Example.Data.Models;
-
+using Exemple.Domain.Models;
 using LanguageExt;
 using Microsoft.EntityFrameworkCore;
 using System;

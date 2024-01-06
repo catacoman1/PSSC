@@ -1,13 +1,13 @@
-﻿
-using Example.Data;
+﻿using Example.Data;
+using Example.Data.Repositories;
+using Exemple.Domain.Models;
+using Exemple.Domain.WorkFlow;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Example.Data.Repositories;
 using static Exemple.Domain.Models.Cart;
-using Exemple.Domain.Models;
 using static Exemple.Domain.Models.PaymentEvent;
 
 namespace Exemple.Domain.Operations
