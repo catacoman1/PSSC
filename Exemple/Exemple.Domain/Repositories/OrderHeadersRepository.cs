@@ -1,6 +1,5 @@
 ﻿using Example.Data.Models;
-using Exemple.Domain.Models;
-using Exemple.Domain.Repositories;
+
 using LanguageExt;
 using Microsoft.EntityFrameworkCore;
 using System;
