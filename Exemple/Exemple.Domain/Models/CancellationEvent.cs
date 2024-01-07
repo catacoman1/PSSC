@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exemple.Domain.Models
 {
     public abstract class CancellationEvent
     {
-
-        public abstract TResult Match<TResult>(
-        Func<CancellationSucceedEvent, TResult> whenCancellationSucceedEvent,
-        Func<CancellationFailedEvent, TResult> whenCancellationFailedEvent);
-
-
+        // The Match method now returns CancellationEvent instead of a generic TResult
+        public abstract CancellationEvent Match(
+            Func<CancellationSucceedEvent, CancellationEvent> whenCancellationSucceedEvent,
+            Func<CancellationFailedEvent, CancellationEvent> whenCancellationFailedEvent);
 
         public class CancellationSucceedEvent : CancellationEvent
         {
@@ -24,9 +18,9 @@ namespace Exemple.Domain.Models
                 OrderId = orderId;
             }
 
-            public override TResult Match<TResult>(
-                Func<CancellationSucceedEvent, TResult> whenCancellationSucceedEvent,
-                Func<CancellationFailedEvent, TResult> whenCancellationFailedEvent)
+            public override CancellationEvent Match(
+                Func<CancellationSucceedEvent, CancellationEvent> whenCancellationSucceedEvent,
+                Func<CancellationFailedEvent, CancellationEvent> whenCancellationFailedEvent)
             {
                 return whenCancellationSucceedEvent(this);
             }
@@ -41,9 +35,9 @@ namespace Exemple.Domain.Models
                 Error = error;
             }
 
-            public override TResult Match<TResult>(
-                Func<CancellationSucceedEvent, TResult> whenCancellationSucceedEvent,
-                Func<CancellationFailedEvent, TResult> whenCancellationFailedEvent)
+            public override CancellationEvent Match(
+                Func<CancellationSucceedEvent, CancellationEvent> whenCancellationSucceedEvent,
+                Func<CancellationFailedEvent, CancellationEvent> whenCancellationFailedEvent)
             {
                 return whenCancellationFailedEvent(this);
             }

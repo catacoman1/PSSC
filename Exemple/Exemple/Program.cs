@@ -47,8 +47,8 @@ namespace Exemple
                         Console.WriteLine($"\nShopping succeed:\nDate: {@event.date}\nPrice payed: {@event.totalPrice}");
                         return @event;
                     }
-     
-                    
+
+
                     );
 
             Console.Write("\nEnter Order ID to cancel or leave empty to skip: ");
@@ -57,23 +57,23 @@ namespace Exemple
             {
                 CancelWorkflow cancelWorkflow = new CancelWorkflow(dbContext);
                 var cancellationResult = await cancelWorkflow.Execute(orderId);
-                cancellationResult.Match<Unit>(
-                    whenCancellationSucceedEvent: @event =>
+                cancellationResult.Match(
+                whenCancellationSucceedEvent: @event =>
                     {
                         Console.WriteLine($"\nOrder cancellation succeeded: Order ID {@event.OrderId} has been cancelled.");
-                        return Unit.Default;
+                        return @event;
                     },
-                    whenCancellationFailedEvent: @event =>
+                whenCancellationFailedEvent: @event =>
                     {
                         Console.WriteLine($"\nOrder cancellation failed: {@event.Error}");
-                        return Unit.Default;
+                        return @event;
                     }
                 );
             }
             Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
 
-           
+
 
 
         }
