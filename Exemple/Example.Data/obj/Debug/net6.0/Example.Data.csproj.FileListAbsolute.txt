@@ -26,3 +26,17 @@ C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Example.Data\bin\Debug\net6
 C:\Users\serbi\Desktop\pssc noi proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.genruntimeconfig.cache
 C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.runtimeconfig.json
 C:\Users\cata\Desktop\PSSC proiect\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.genruntimeconfig.cache
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.deps.json
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.runtimeconfig.json
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.dll
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\bin\Debug\net6.0\Example.Data.pdb
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.csproj.AssemblyReference.cache
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.AssemblyInfoInputs.cache
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.AssemblyInfo.cs
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.csproj.CoreCompileInputs.cache
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.dll
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\refint\Example.Data.dll
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.pdb
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\Example.Data.genruntimeconfig.cache
+C:\Users\ZZ03IO826\Desktop\Proiect PSSC\PSSC\Exemple\Example.Data\obj\Debug\net6.0\ref\Example.Data.dll

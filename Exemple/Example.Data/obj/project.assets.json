@@ -6553,19 +6553,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cata\\.nuget\\packages\\": {}
+    "C:\\Users\\ZZ03IO826\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Example.Data\\Example.Data.csproj",
+      "projectUniqueName": "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Example.Data\\Example.Data.csproj",
       "projectName": "Example.Data",
-      "projectPath": "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Example.Data\\Example.Data.csproj",
-      "packagesPath": "C:\\Users\\cata\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Example.Data\\obj\\",
+      "projectPath": "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Example.Data\\Example.Data.csproj",
+      "packagesPath": "C:\\Users\\ZZ03IO826\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Example.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cata\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ZZ03IO826\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6620,7 +6620,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

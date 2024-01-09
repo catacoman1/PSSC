@@ -7504,19 +7504,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cata\\.nuget\\packages\\": {}
+    "C:\\Users\\ZZ03IO826\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Exemple\\Exemple.csproj",
+      "projectUniqueName": "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Exemple\\Exemple.csproj",
       "projectName": "Exemple",
-      "projectPath": "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Exemple\\Exemple.csproj",
-      "packagesPath": "C:\\Users\\cata\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Exemple\\obj\\",
+      "projectPath": "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Exemple\\Exemple.csproj",
+      "packagesPath": "C:\\Users\\ZZ03IO826\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Exemple\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cata\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ZZ03IO826\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7530,11 +7530,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Example.Data\\Example.Data.csproj": {
-              "projectPath": "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Example.Data\\Example.Data.csproj"
+            "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Example.Data\\Example.Data.csproj": {
+              "projectPath": "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Example.Data\\Example.Data.csproj"
             },
-            "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Exemple.Domain\\Exemple.Domain.csproj": {
-              "projectPath": "C:\\Users\\cata\\Desktop\\PSSC proiect\\PSSC\\Exemple\\Exemple.Domain\\Exemple.Domain.csproj"
+            "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Exemple.Domain\\Exemple.Domain.csproj": {
+              "projectPath": "C:\\Users\\ZZ03IO826\\Desktop\\Proiect PSSC\\PSSC\\Exemple\\Exemple.Domain\\Exemple.Domain.csproj"
             }
           }
         }
@@ -7578,7 +7578,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
